@@ -11,7 +11,7 @@ interface JornadaGroupContextType {
 
 const JornadaGroupContext = createContext<JornadaGroupContextType | undefined>(undefined);
 
-const API_URL = `${API_BASE_URL}/jornada_groups`;
+const API_URL = `${API_BASE_URL}/jornadas`;
 
 export const JornadaGroupProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
     const [groups, setGroups] = useState<JornadaGroup[]>([]);

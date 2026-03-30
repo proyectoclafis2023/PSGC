@@ -4,7 +4,7 @@ import { API_BASE_URL } from '../config/api';
 
 const CameraRequestContext = createContext<CameraRequestContextType | undefined>(undefined);
 
-const API_URL = `${API_BASE_URL}/camera_requests`;
+const API_URL = `${API_BASE_URL}/cctv_logs`;
 
 export const CameraRequestProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
     const [requests, setRequests] = useState<CameraRequest[]>([]);

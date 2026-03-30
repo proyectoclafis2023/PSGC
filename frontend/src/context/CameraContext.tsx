@@ -4,7 +4,7 @@ import { API_BASE_URL } from '../config/api';
 
 const CameraContext = createContext<CameraContextType | undefined>(undefined);
 
-const API_URL = `${API_BASE_URL}/cameras`;
+const API_URL = `${API_BASE_URL}/camaras`;
 
 export const CameraProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
     const [cameras, setCameras] = useState<Camera[]>([]);

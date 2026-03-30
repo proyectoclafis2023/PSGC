@@ -6,7 +6,7 @@ import { API_BASE_URL } from '../config/api';
 
 const PersonnelContext = createContext<PersonnelContextType | undefined>(undefined);
 
-const API_URL = `${API_BASE_URL}/personnel`;
+const API_URL = `${API_BASE_URL}/personal`;
 
 export const PersonnelProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
     const { addLog } = useHistoryLogs();

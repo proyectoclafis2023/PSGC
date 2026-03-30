@@ -4,7 +4,7 @@ import { API_BASE_URL } from '../config/api';
 
 const CertificateContext = createContext<CertificateContextType | undefined>(undefined);
 
-const API_URL = `${API_BASE_URL}/certificates`;
+const API_URL = `${API_BASE_URL}/certificados`;
 
 export const CertificateProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
     const [certificates, setCertificates] = useState<Certificate[]>([]);

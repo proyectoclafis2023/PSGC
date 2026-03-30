@@ -4,7 +4,7 @@ import { API_BASE_URL } from '../config/api';
 
 const CourierContext = createContext<CourierContextType | undefined>(undefined);
 
-const API_URL = `${API_BASE_URL}/couriers`;
+const API_URL = `${API_BASE_URL}/correspondencia`;
 
 export const CourierProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
     const [couriers, setCouriers] = useState<Courier[]>([]);

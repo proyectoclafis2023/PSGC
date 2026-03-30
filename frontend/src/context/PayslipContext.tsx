@@ -4,8 +4,8 @@ import { API_BASE_URL } from '../config/api';
 
 const PayslipContext = createContext<PayslipContextType | undefined>(undefined);
 
-const PAYSLIPS_API = `${API_BASE_URL}/payslips`;
-const ADVANCES_API = `${API_BASE_URL}/employee_advances`;
+const PAYSLIPS_API = `${API_BASE_URL}/liquidaciones`;
+const ADVANCES_API = `${API_BASE_URL}/liquidaciones`;
 
 export const PayslipProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
     const [payslips, setPayslips] = useState<Payslip[]>([]);

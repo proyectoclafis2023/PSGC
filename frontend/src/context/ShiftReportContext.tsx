@@ -9,7 +9,7 @@ export const ShiftReportProvider: React.FC<{ children: ReactNode }> = ({ childre
 
     const fetchReports = async () => {
         try {
-            const response = await fetch(`${API_BASE_URL}/shift_reports`, { headers: { 'Authorization': 'Bearer ' + localStorage.getItem('token') } });
+            const response = await fetch(`${API_BASE_URL}/reporte_diario`, { headers: { 'Authorization': 'Bearer ' + localStorage.getItem('token') } });
             if (response.ok) {
                 const data = await response.json();
                 setReports(Array.isArray(data) ? data : []);
@@ -43,7 +43,7 @@ export const ShiftReportProvider: React.FC<{ children: ReactNode }> = ({ childre
         };
 
         try {
-            const response = await fetch(`${API_BASE_URL}/shift_reports`, {
+            const response = await fetch(`${API_BASE_URL}/reporte_diario`, {
                 method: 'POST',
                 headers: { 'Authorization': 'Bearer ' + localStorage.getItem('token'), 'Content-Type': 'application/json' },
                 body: JSON.stringify(newRecord)
@@ -66,7 +66,7 @@ export const ShiftReportProvider: React.FC<{ children: ReactNode }> = ({ childre
         const updated = { ...report, ...data };
 
         try {
-            const response = await fetch(`${API_BASE_URL}/shift_reports/${id}`, {
+            const response = await fetch(`${API_BASE_URL}/reporte_diario/${id}`, {
                 method: 'PUT',
                 headers: { 'Authorization': 'Bearer ' + localStorage.getItem('token'), 'Content-Type': 'application/json' },
                 body: JSON.stringify(updated)
@@ -98,7 +98,7 @@ export const ShiftReportProvider: React.FC<{ children: ReactNode }> = ({ childre
 
     const deleteReport = async (id: string): Promise<void> => {
         try {
-            const response = await fetch(`${API_BASE_URL}/shift_reports/${id}`, {
+            const response = await fetch(`${API_BASE_URL}/reporte_diario/${id}`, {
                 method: 'DELETE'
             });
             if (response.ok) {

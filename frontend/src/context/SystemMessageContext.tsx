@@ -4,7 +4,7 @@ import { API_BASE_URL } from '../config/api';
 
 const SystemMessageContext = createContext<SystemMessageContextType | undefined>(undefined);
 
-const API_URL = `${API_BASE_URL}/system_messages`;
+const API_URL = `${API_BASE_URL}/mensajes`;
 
 export const SystemMessageProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
     const [messages, setMessages] = useState<SystemMessage[]>([]);

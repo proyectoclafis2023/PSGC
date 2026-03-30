@@ -4,7 +4,7 @@ import { API_BASE_URL } from '../config/api';
 
 const CorrespondenceContext = createContext<CorrespondenceContextType | undefined>(undefined);
 
-const BACKEND_URL = `${API_BASE_URL}/correspondence`;
+const BACKEND_URL = `${API_BASE_URL}/correspondencia`;
 
 export const CorrespondenceProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
     const [items, setItems] = useState<Correspondence[]>([]);

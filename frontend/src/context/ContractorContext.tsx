@@ -4,7 +4,7 @@ import { API_BASE_URL } from '../config/api';
 
 const ContractorContext = createContext<ContractorContextType | undefined>(undefined);
 
-const BACKEND_URL = `${API_BASE_URL}/contractors`;
+const BACKEND_URL = `${API_BASE_URL}/contratistas`;
 
 export const ContractorProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
     const [contractors, setContractors] = useState<Contractor[]>([]);

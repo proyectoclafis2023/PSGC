@@ -4,7 +4,7 @@ import { API_BASE_URL } from '../config/api';
 
 const ContractorVisitContext = createContext<ContractorVisitContextType | undefined>(undefined);
 
-const API_URL = `${API_BASE_URL}/contractors`;
+const API_URL = `${API_BASE_URL}/registro_contratistas`;
 
 export const ContractorVisitProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
     const [visits, setVisits] = useState<ContractorVisit[]>([]);

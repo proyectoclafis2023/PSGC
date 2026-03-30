@@ -137,6 +137,30 @@ const registry = {
         }
     },
 
+    // 5.4.2 Maestro Contratistas (reusa modelo ContratistaVisita)
+    contratistas: {
+        model: 'ContratistaVisita',
+        isMaster: true,
+        fields: [
+            { api: 'id', bd: 'id', excel: 'id' },
+            { api: 'folio', bd: 'folio', excel: 'folio' },
+            { api: 'names', bd: 'names', excel: 'nombres' },
+            { api: 'dni', bd: 'dni', excel: 'dni' },
+            { api: 'company', bd: 'company', excel: 'empresa' },
+            { api: 'subject', bd: 'subject', excel: 'asunto' },
+            { api: 'department_id', bd: 'departmentId', excel: 'unidad_id' },
+            { api: 'status', bd: 'status', excel: 'estado' },
+            { api: 'entry_at', bd: 'entryAt', excel: 'fecha_entrada' },
+            { api: 'exit_at', bd: 'exitAt', excel: 'fecha_salida' },
+            { api: 'allowed_until', bd: 'allowedUntil', excel: 'permitido_hasta' },
+            { api: 'is_archived', bd: 'isArchived', excel: 'archivado' },
+            { api: 'created_at', bd: 'createdAt', excel: 'fecha_creacion' }
+        ],
+        relations: {
+            department: 'unidades'
+        }
+    },
+
     // 2.4.1 Solicitud Insumos
     solicitud_insumos: {
         model: 'SupplyRequest',
@@ -541,9 +565,34 @@ const registry = {
         fields: [
             { api: 'id', bd: 'id', excel: 'id' },
             { api: 'system_name', bd: 'systemName', excel: 'nombre_sistema' },
+            { api: 'system_icon', bd: 'systemIcon', excel: 'icono_sistema' },
+            { api: 'system_logo', bd: 'systemLogo', excel: 'logo_sistema' },
+            { api: 'system_favicon', bd: 'systemFavicon', excel: 'favicon' },
+            { api: 'camera_backup_days', bd: 'cameraBackupDays', excel: 'dias_respaldo_camaras' },
+            { api: 'dark_mode', bd: 'darkMode', excel: 'modo_oscuro' },
+            { api: 'theme', bd: 'theme', excel: 'tema' },
             { api: 'admin_name', bd: 'adminName', excel: 'nombre_admin' },
+            { api: 'admin_rut', bd: 'adminRut', excel: 'rut_admin' },
             { api: 'condo_rut', bd: 'condoRut', excel: 'rut_condominio' },
-            { api: 'condo_address', bd: 'condoAddress', excel: 'direccion_condominio' }
+            { api: 'condo_address', bd: 'condoAddress', excel: 'direccion_condominio' },
+            { api: 'admin_phone', bd: 'adminPhone', excel: 'telefono_admin' },
+            { api: 'admin_signature', bd: 'adminSignature', excel: 'firma_admin' },
+            { api: 'deletion_password', bd: 'deletionPassword', excel: 'clave_eliminacion' },
+            { api: 'vacation_accrual_rate', bd: 'vacationAccrualRate', excel: 'tasa_vacaciones' },
+            { api: 'smtp_host', bd: 'smtpHost', excel: 'smtp_host' },
+            { api: 'smtp_port', bd: 'smtpPort', excel: 'smtp_port' },
+            { api: 'smtp_user', bd: 'smtpUser', excel: 'smtp_user' },
+            { api: 'smtp_password', bd: 'smtpPassword', excel: 'smtp_password' },
+            { api: 'smtp_from', bd: 'smtpFrom', excel: 'smtp_from' },
+            { api: 'smtp_bcc', bd: 'smtpBcc', excel: 'smtp_bcc' },
+            { api: 'concierge_email', bd: 'conciergeEmail', excel: 'email_conserjeria' },
+            { api: 'email_triggers', bd: 'emailTriggers', excel: 'triggers_email', isJson: true },
+            { api: 'payment_deadline_day', bd: 'paymentDeadlineDay', excel: 'dia_vencimiento' },
+            { api: 'max_arrears_months', bd: 'maxArrearsMonths', excel: 'meses_max_morosidad' },
+            { api: 'arrears_fine_amount', bd: 'arrearsFineAmount', excel: 'monto_multa_morosidad' },
+            { api: 'arrears_fine_percentage', bd: 'arrearsFinePercentage', excel: 'porcentaje_multa_morosidad' },
+            { api: 'census_frequency_years', bd: 'censusFrequencyYears', excel: 'frecuencia_censo_anios' },
+            { api: 'created_at', bd: 'createdAt', excel: 'fecha_creacion' }
         ]
     },
 
@@ -587,6 +636,19 @@ const registry = {
     // 7.1.1 Infraestructura
     infraestructura: {
         model: 'ItemInfraestructura',
+        isMaster: true,
+        fields: [
+            { api: 'id', bd: 'id', excel: 'id' },
+            { api: 'name', bd: 'nombre', excel: 'nombre' },
+            { api: 'description', bd: 'description', excel: 'descripcion' },
+            { api: 'is_mandatory', bd: 'isMandatory', excel: 'obligatorio' },
+            { api: 'is_archived', bd: 'isArchived', excel: 'archivado' }
+        ]
+    },
+
+    // 7.1.1b Equipamiento (sub-módulo de Infraestructura)
+    equipamiento: {
+        model: 'ItemEquipamiento',
         isMaster: true,
         fields: [
             { api: 'id', bd: 'id', excel: 'id' },
@@ -768,15 +830,7 @@ const registry = {
     },
 
     // 7.3.5 Números Emergencia (Maestro) -> use emergencias
-    maestro_emergencias: {
-        model: 'NumeroEmergencia',
-        isMaster: true,
-        fields: [
-            { api: 'id', bd: 'id', excel: 'id' },
-            { api: 'name', bd: 'nombre', excel: 'nombre' },
-            { api: 'phone', bd: 'phone', excel: 'telefono' }
-        ]
-    },
+
 
     // 7.3.6 Condiciones Especiales
     condiciones_especiales: {

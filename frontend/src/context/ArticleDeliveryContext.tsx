@@ -4,7 +4,7 @@ import { API_BASE_URL } from '../config/api';
 
 const ArticleDeliveryContext = createContext<ArticleDeliveryContextType | undefined>(undefined);
 
-const API_URL = `${API_BASE_URL}/article_deliveries`;
+const API_URL = `${API_BASE_URL}/entregas_articulos`;
 
 export const ArticleDeliveryProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
     const [deliveries, setDeliveries] = useState<ArticleDelivery[]>([]);

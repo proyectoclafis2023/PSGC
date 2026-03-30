@@ -12,7 +12,7 @@ const HistoryLogContext = createContext<HistoryLogContextType | undefined>(undef
 
 import { API_BASE_URL } from '../config/api';
 
-const API_URL = `${API_BASE_URL}/history_logs`;
+const API_URL = `${API_BASE_URL}/bitacora_turnos`;
 
 export const HistoryLogProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
     const [logs, setLogs] = useState<HistoryLog[]>([]);

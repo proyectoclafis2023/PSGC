@@ -4,7 +4,7 @@ import { API_BASE_URL } from '../config/api';
 
 const DirectedMessageContext = createContext<DirectedMessageContextType | undefined>(undefined);
 
-const API_URL = `${API_BASE_URL}/directed_messages`;
+const API_URL = `${API_BASE_URL}/mensajes_dirigidos`;
 
 export const DirectedMessageProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
     const [messages, setMessages] = useState<DirectedMessage[]>([]);

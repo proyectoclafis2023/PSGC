@@ -4,7 +4,7 @@ import { API_BASE_URL } from '../config/api';
 
 const UserContext = createContext<UserContextType | undefined>(undefined);
 
-const API_URL = `${API_BASE_URL}/users`;
+const API_URL = `${API_BASE_URL}/personal`;
 
 export const UserProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
     const [users, setUsers] = useState<User[]>([]);

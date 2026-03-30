@@ -4,7 +4,7 @@ import { API_BASE_URL } from '../config/api';
 
 const ProfileContext = createContext<ProfileContextType | undefined>(undefined);
 
-const API_URL = `${API_BASE_URL}/profiles`;
+const API_URL = `${API_BASE_URL}/perfiles`;
 
 export const ProfileProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
     const [profiles, setProfiles] = useState<Profile[]>([]);
@@ -13,7 +13,7 @@ export const ProfileProvider: React.FC<{ children: ReactNode }> = ({ children })
         try {
             const [profilesRes, permsRes] = await Promise.all([
                 fetch(API_URL),
-                fetch(`${API_BASE_URL}/profile_permissions`, { headers: { 'Authorization': 'Bearer ' + localStorage.getItem('token') } })
+                fetch(`${API_BASE_URL}/perfiles`, { headers: { 'Authorization': 'Bearer ' + localStorage.getItem('token') } })
             ]);
             
             if (profilesRes.ok && permsRes.ok) {
@@ -47,7 +47,7 @@ export const ProfileProvider: React.FC<{ children: ReactNode }> = ({ children })
             if (response.ok) {
                 const newProfile = await response.json();
                 if (permissions) {
-                    await fetch(`${API_BASE_URL}/profile_permissions`, {
+                    await fetch(`${API_BASE_URL}/perfiles`, {
                         method: 'POST',
                         headers: { 'Authorization': 'Bearer ' + localStorage.getItem('token'), 'Content-Type': 'application/json' },
                         body: JSON.stringify({ ...permissions, profileId: newProfile.id })
@@ -69,7 +69,7 @@ export const ProfileProvider: React.FC<{ children: ReactNode }> = ({ children })
             if (response.ok) {
                 if (permissions) {
                     // Try to update first, if fail (404/500 if not exist), could create but usually exists
-                    await fetch(`${API_BASE_URL}/profile_permissions/${profile.id}`, {
+                    await fetch(`${API_BASE_URL}/perfiles/${profile.id}`, {
                         method: 'PUT',
                         headers: { 'Authorization': 'Bearer ' + localStorage.getItem('token'), 'Content-Type': 'application/json' },
                         body: JSON.stringify({ ...permissions, profileId: profile.id })

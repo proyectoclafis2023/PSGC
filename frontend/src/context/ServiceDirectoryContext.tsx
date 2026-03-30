@@ -4,7 +4,7 @@ import type { ServiceDirectory, ServiceDirectoryContextType } from '../types';
 
 const ServiceDirectoryContext = createContext<ServiceDirectoryContextType | undefined>(undefined);
 
-const API_URL = `${API_BASE_URL}/service_directory`;
+const API_URL = `${API_BASE_URL}/servicios_residentes`;
 
 export const ServiceDirectoryProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
     const [services, setServices] = useState<ServiceDirectory[]>([]);

@@ -4,7 +4,7 @@ import { API_BASE_URL } from '../config/api';
 
 const FixedAssetContext = createContext<FixedAssetContextType | undefined>(undefined);
 
-const API_URL = `${API_BASE_URL}/fixed_assets`;
+const API_URL = `${API_BASE_URL}/activo_fijo`;
 
 export const FixedAssetProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
     const [assets, setAssets] = useState<FixedAsset[]>([]);

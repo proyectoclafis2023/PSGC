@@ -33,7 +33,7 @@ export const CondoBoardProvider: React.FC<{ children: React.ReactNode }> = ({ ch
     const fetchMembers = async () => {
         setLoading(true);
         try {
-            const data = await crudService.getAll('condo_board');
+            const data = await crudService.getAll('directiva');
             setMembers((Array.isArray(data) ? data : []).filter((m: any) => !m.is_archived));
         } catch (error) {
             console.error('Error fetching board members:', error);
@@ -47,17 +47,17 @@ export const CondoBoardProvider: React.FC<{ children: React.ReactNode }> = ({ ch
     }, []);
 
     const addMember = async (data: any) => {
-        await crudService.create('condo_board', data);
+        await crudService.create('directiva', data);
         await fetchMembers();
     };
 
     const updateMember = async (id: string, data: any) => {
-        await crudService.update('condo_board', id, data);
+        await crudService.update('directiva', id, data);
         await fetchMembers();
     };
 
     const deleteMember = async (id: string) => {
-        await crudService.remove('condo_board', id);
+        await crudService.remove('directiva', id);
         await fetchMembers();
     };
 

@@ -9,7 +9,7 @@ export const VisitorProvider: React.FC<{ children: ReactNode }> = ({ children })
 
     const fetchVisitors = async () => {
         try {
-            const response = await fetch(`${API_BASE_URL}/visitors`, { headers: { 'Authorization': 'Bearer ' + localStorage.getItem('token') } });
+            const response = await fetch(`${API_BASE_URL}/visitas`, { headers: { 'Authorization': 'Bearer ' + localStorage.getItem('token') } });
             if (response.ok) {
                 const data = await response.json();
                 setVisitors(Array.isArray(data) ? data : []);
@@ -38,7 +38,7 @@ export const VisitorProvider: React.FC<{ children: ReactNode }> = ({ children })
             created_at: new Date().toISOString()
         };
 
-        const response = await fetch(`${API_BASE_URL}/visitors`, {
+        const response = await fetch(`${API_BASE_URL}/visitas`, {
             method: 'POST',
             headers: { 'Authorization': 'Bearer ' + localStorage.getItem('token'), 'Content-Type': 'application/json' },
             body: JSON.stringify(newRecord)
@@ -58,7 +58,7 @@ export const VisitorProvider: React.FC<{ children: ReactNode }> = ({ children })
         if (status === 'entered') updated.entry_at = time || new Date().toLocaleTimeString();
         if (status === 'exited') updated.exit_at = time || new Date().toLocaleTimeString();
 
-        const response = await fetch(`${API_BASE_URL}/visitors/${id}`, {
+        const response = await fetch(`${API_BASE_URL}/visitas/${id}`, {
             method: 'PUT',
             headers: { 'Authorization': 'Bearer ' + localStorage.getItem('token'), 'Content-Type': 'application/json' },
             body: JSON.stringify(updated)
@@ -71,7 +71,7 @@ export const VisitorProvider: React.FC<{ children: ReactNode }> = ({ children })
     };
 
     const deleteVisitor = async (id: string) => {
-        const response = await fetch(`${API_BASE_URL}/visitors/${id}`, {
+        const response = await fetch(`${API_BASE_URL}/visitas/${id}`, {
             method: 'DELETE'
         });
         if (!response.ok) {

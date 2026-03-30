@@ -5,7 +5,7 @@ import { API_BASE_URL } from '../config/api';
 const ReservationContext = createContext<ReservationContextType | undefined>(undefined);
 
 const API_URL = `${API_BASE_URL}/reservas`;
-const LOGS_API_URL = `${API_BASE_URL}/reservation_logs`;
+const LOGS_API_URL = `${API_BASE_URL}/reservas`;
 
 export const ReservationProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
     const [reservations, setReservations] = useState<Reservation[]>([]);
