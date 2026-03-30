@@ -1,4 +1,4 @@
-# SGC - Plataforma de Gestión Comunitaria
+# PSGC - Proyecto de Gestión Comunitaria (Alpha 0.1.0)
 
 ![Dharma Tecnologías](https://www.dharmatec.cl/wp-content/uploads/2021/05/logo-dharma-01.png)
 
