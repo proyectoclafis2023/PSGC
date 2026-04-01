@@ -1,6 +1,6 @@
 {
-  "name": "psgc-backend",
-  "version": "0.1.0-alpha.2",
+  "name": "psgcrc-backend",
+  "version": "2.6.0",
   "description": "",
   "main": "index.js",
   "scripts": {

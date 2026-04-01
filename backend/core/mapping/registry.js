@@ -898,6 +898,10 @@ const registry = {
             { api: 'period_month', bd: 'periodMonth' },
             { api: 'period_year', bd: 'periodYear' },
             { api: 'amount_paid', bd: 'amountPaid' },
+            { api: 'payment_date', bd: 'paymentDate' },
+            { api: 'payment_method', bd: 'paymentMethod' },
+            { api: 'receipt_folio', bd: 'receiptFolio' },
+            { api: 'notes', bd: 'notes' },
             { api: 'status', bd: 'status' }
         ],
         relations: {

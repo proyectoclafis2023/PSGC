@@ -41,7 +41,8 @@ async function main() {
         { slug: 'unit_types:manage', description: 'Maestra Tipos de Unidad' },
         { slug: 'infrastructure:manage', description: 'Maestra Infraestructura' },
         { slug: 'personnel:manage', description: 'Maestra Personal' },
-        { slug: 'roles:manage', description: 'Gestión de Roles y Permisos' }
+        { slug: 'roles:manage', description: 'Gestión de Roles y Permisos' },
+        { slug: 'infrastructure:view', description: 'Permiso para visualizar infraestructura (torres/depts)' }
     ];
 
     const permMap = {};
@@ -58,7 +59,7 @@ async function main() {
     const roles = [
         { name: 'admin', description: 'Administrador Global', perms: permissions.map(p => p.slug) },
         { name: 'resident', description: 'Residente Habitacional', perms: ['common_expenses:view', 'payments:view', 'reservations:view', 'tickets:view', 'correspondence:view', 'services:view', 'emergencies:view'] },
-        { name: 'owner', description: 'Propietario Legal', perms: ['common_expenses:view', 'payments:view', 'reservations:view', 'tickets:view', 'correspondence:view', 'services:view', 'emergencies:view'] },
+        { name: 'owner', description: 'Propietario Legal', perms: ['common_expenses:view', 'payments:view', 'reservations:view', 'tickets:view', 'correspondence:view', 'services:view', 'emergencies:view', 'infrastructure:view'] },
         { name: 'concierge', description: 'Conserjería y Vigilancia', perms: ['reports:view', 'shift_logs:view', 'visits:view', 'correspondence:view', 'contractors:view', 'emergencies:view', 'common_expenses:view'] }
     ];
 

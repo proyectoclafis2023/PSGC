@@ -75,7 +75,7 @@ async function runTests() {
                     method: 'POST',
                     headers,
                     body: JSON.stringify({
-                        department_id: 'any',
+                        department_id: 'cmncmmfc00013iqhnhyzm9atq',
                         amount_paid: 1000,
                         payment_date: new Date().toISOString(),
                         payment_method: 'Transferencia',
@@ -84,7 +84,8 @@ async function runTests() {
                         period_year: 2026
                     })
                 }, user.role);
-                logEvent(user.role, 'CREATE_PAYMENT', res.ok ? 'OK' : `FAILED (${res.status})`);
+                const resData = !res.ok ? await res.json() : null;
+                logEvent(user.role, 'CREATE_PAYMENT', res.ok ? 'OK' : `FAILED (${res.status}: ${JSON.stringify(resData)})`);
 
             } else if (user.role === 'resident') {
                 // View payments

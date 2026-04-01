@@ -9,10 +9,10 @@ const ROOT = process.cwd();
 
 const paths = {
   modules: path.join(ROOT, "docs/architecture/sgc-modules-full.txt"),
-  prisma: path.join(ROOT, "sgc-backend/prisma/schema.prisma"),
-  backend: path.join(ROOT, "sgc-backend"),
-  index: path.join(ROOT, "sgc-backend/index.js"),
-  frontend: path.join(ROOT, "user-crud-app/src"),
+  prisma: path.join(ROOT, "backend/prisma/schema.prisma"),
+  backend: path.join(ROOT, "backend"),
+  index: path.join(ROOT, "backend/index.js"),
+  frontend: path.join(ROOT, "frontend/src"),
 };
 
 // -------------------------
